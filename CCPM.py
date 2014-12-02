@@ -4,7 +4,7 @@ from sklearn import datasets
 from sklearn.base import BaseEstimator
 from sklearn.grid_search import GridSearchCV
 
-class LSPClusterer(BaseEstimator):
+class CCPM(BaseEstimator):
     def __init__(self,sigma=0.3,lam=1.,xce=None):
         self.sigma=sigma
         self.lam=lam
@@ -39,12 +39,19 @@ class LSPClusterer(BaseEstimator):
         score=self.alpha.dot(tmp1).dot(self.alpha)-self.alpha.dot(tmp2)
         return -score
 
+class CCPMCV(CCPM):
+    def fit(self,x):
+        params={"sigma":logspace(-1,1,10),"lam":logspace(-1,1,10)}
+        self=GridSearchCV(CCPM(),params).fit(x).best_estimator_
+        return self
+
 def main():
     n=500
     x,y=datasets.make_circles(n_samples=n,factor=.5,noise=.05)
 
-    params={"sigma":logspace(-1,1,10),"lam":logspace(-1,1,10)}
-    label=GridSearchCV(LSPClusterer(),params).fit(x).best_estimator_.label
+    #params={"sigma":logspace(-1,1,10),"lam":logspace(-1,1,10)}
+    #label=GridSearchCV(LSPClusterer(),params).fit(x).best_estimator_.label
+    label=CCPMCV().fit(x).label
     print "ARI:",adjusted_rand_score(y,label)
     figure(1)
     scatter(x[:,0],x[:,1],c=label,s=50)
