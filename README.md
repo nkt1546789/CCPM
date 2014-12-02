@@ -1,9 +1,12 @@
 Least-Square Probabilistic Clusterer (LSPClusterer)
 ============
 
-<img src="https://github.com/nkt1546789/LSPClusterer/blob/master/circles.png" align="left" height="512" width="512" >
-<br>
+![circle](https://github.com/nkt1546789/LSPClusterer/blob/master/circles.png =512x512)
 
-Note: LSPClusterer is only for 2-cluster problem.
+Least-Square Probabilistic Clusterer (LSPClusterer) is a clustering method based on class-prior matching. 
+Thanks to kernel model (not kernel method), it can capture non-linear structures and parameters such as bandwidth and regularization paramter are automatically tuned by cross-validation. 
+This work haven't been published yet, and I'm not sure if this is so promising or not. 
+I'm waiting for your feedbacks. Thanks for reading :)
+Note: LSPClusterer is only for 2-clusters problem.
 
 
