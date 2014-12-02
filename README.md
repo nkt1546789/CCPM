@@ -1,4 +1,8 @@
-LSPClusterer
+Least-Square Probabilistic Clusterer (LSPClusterer)
 ============
 
-Least-Square Probabilistic Clusterer
+![Circles](http://matplotlib.org/_images/scatter_demo1.png)
+
+Note: LSPClusterer is only for 2-cluster problem.
+
+
