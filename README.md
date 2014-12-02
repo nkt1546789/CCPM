@@ -8,6 +8,6 @@ Thanks to kernel model (not kernel method), it can capture non-linear structures
 This work has not been published yet, and I'm not sure if this is so promising or not. 
 I'm waiting for your feedbacks. Thanks for reading :)
 
-Note: CCPM is only for 2-clusters problem.
+Note: CCPM is only for binary clustering problems.
 
 
