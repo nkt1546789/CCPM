@@ -48,9 +48,6 @@ class CCPMCV(CCPM):
 def main():
     n=500
     x,y=datasets.make_circles(n_samples=n,factor=.5,noise=.05)
-
-    #params={"sigma":logspace(-1,1,10),"lam":logspace(-1,1,10)}
-    #label=GridSearchCV(LSPClusterer(),params).fit(x).best_estimator_.label
     label=CCPMCV().fit(x).label
     print "ARI:",adjusted_rand_score(y,label)
     figure(1)
